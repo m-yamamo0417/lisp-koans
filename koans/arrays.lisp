@@ -21,15 +21,15 @@
         ;; AREF stands for "array reference".
         (setf (aref chess-board x y) (if (evenp (+ x y)) :black :white))))
     (assert-true (typep chess-board 'array))
-    (assert-equal ____ (aref chess-board 0 0))
-    (assert-equal ____ (aref chess-board 2 3))
+    (assert-equal :black (aref chess-board 0 0))
+    (assert-equal :white (aref chess-board 2 3))
     ;; The function ARRAY-RANK returns the number of dimensions of the array.
-    (assert-equal ____ (array-rank chess-board))
+    (assert-equal 2 (array-rank chess-board))
     ;; The function ARRAY-DIMENSIONS returns a list of the cardinality of the
     ;; array dimensions.
-    (assert-equal ____ (array-dimensions chess-board))
+    (assert-equal '(8 8) (array-dimensions chess-board))
     ;; ARRAY-TOTAL-SIZE returns the total number of elements in the array.
-    (assert-equal ____ (array-total-size chess-board))))
+    (assert-equal 64 (array-total-size chess-board))))
 
 (define-test make-your-own-array
   ;; Make your own array that satisfies the test.
